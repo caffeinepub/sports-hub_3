@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Satoshi:wght@300..700&display=swap");
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.1 0.008 260;
+    --foreground: 0.97 0.006 260;
+    --card: 0.14 0.012 260;
+    --card-foreground: 0.97 0.006 260;
+    --popover: 0.14 0.012 260;
+    --popover-foreground: 0.97 0.006 260;
+    --primary: 0.76 0.19 210;
+    --primary-foreground: 0.08 0.01 260;
+    --secondary: 0.78 0.2 130;
+    --secondary-foreground: 0.08 0.01 260;
+    --muted: 0.22 0.012 260;
+    --muted-foreground: 0.62 0.015 260;
+    --accent: 0.22 0.012 260;
+    --accent-foreground: 0.97 0.006 260;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.97 0.006 260;
+    --border: 0.22 0.015 260;
+    --input: 0.22 0.015 260;
+    --ring: 0.76 0.19 210;
+    --radius: 0.5rem;
+    --chart-1: 0.76 0.19 210;
+    --chart-2: 0.78 0.2 130;
+    --chart-3: 0.7 0.18 55;
+    --chart-4: 0.65 0.22 330;
+    --chart-5: 0.6 0.18 270;
+    --sidebar: 0.12 0.01 260;
+    --sidebar-foreground: 0.97 0.006 260;
+    --sidebar-primary: 0.76 0.19 210;
+    --sidebar-primary-foreground: 0.08 0.01 260;
+    --sidebar-accent: 0.22 0.012 260;
+    --sidebar-accent-foreground: 0.97 0.006 260;
+    --sidebar-border: 0.22 0.015 260;
+    --sidebar-ring: 0.76 0.19 210;
+    --badminton: 0.76 0.19 210;
+    --badminton-glow: 0.76 0.19 210;
+    --football: 0.78 0.2 130;
+    --football-glow: 0.78 0.2 130;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", "Bricolage Grotesque", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Bricolage Grotesque", "Satoshi", sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-badminton {
+    color: oklch(var(--badminton));
+  }
+  .text-football {
+    color: oklch(var(--football));
+  }
+  .bg-badminton {
+    background-color: oklch(var(--badminton));
+  }
+  .bg-football {
+    background-color: oklch(var(--football));
+  }
+  .border-badminton {
+    border-color: oklch(var(--badminton));
+  }
+  .border-football {
+    border-color: oklch(var(--football));
+  }
+  .glow-badminton {
+    box-shadow: 0 0 30px oklch(var(--badminton) / 0.4), 0 0 60px
+      oklch(var(--badminton) / 0.15);
+  }
+  .glow-football {
+    box-shadow: 0 0 30px oklch(var(--football) / 0.4), 0 0 60px
+      oklch(var(--football) / 0.15);
+  }
+  .text-glow-badminton {
+    text-shadow: 0 0 20px oklch(var(--badminton) / 0.8);
+  }
+  .text-glow-football {
+    text-shadow: 0 0 20px oklch(var(--football) / 0.8);
+  }
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+}
